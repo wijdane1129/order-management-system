@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.gestiondecommandes.HelloController">  <!-- Updated controller path -->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <TabPane>
+        <tabs>
+            <Tab text="Products">
+                <content>
+                    <VBox spacing="10">
+                        <HBox spacing="10">
+                            <TextField fx:id="productNameField" promptText="Product Name"/>
+                            <TextField fx:id="productPriceField" promptText="Price"/>
+                            <TextField fx:id="productStockField" promptText="Stock"/>
+                            <Button text="Add Product" onAction="#addProduct"/>
+                            <Button text="Delete Product" onAction="#deleteProduct"/>
+                        </HBox>
+                        <TableView fx:id="productTable">
+                            <columns>
+                                <TableColumn fx:id="nameColumn" text="Name"/>
+                                <TableColumn fx:id="priceColumn" text="Price"/>
+                                <TableColumn fx:id="stockColumn" text="Stock"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <Tab text="Users">
+                <content>
+                    <VBox spacing="10">
+                        <HBox spacing="10">
+                            <TextField fx:id="userNameField" promptText="User Name"/>
+                            <TextField fx:id="userEmailField" promptText="Email"/>
+                            <Button text="Add User" onAction="#addUser"/>
+                            <Button text="Delete User" onAction="#deleteUser"/>
+                        </HBox>
+                        <TableView fx:id="userTable">
+                            <columns>
+                                <TableColumn fx:id="userNameColumn" text="Name"/>
+                                <TableColumn fx:id="userEmailColumn" text="Email"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <Tab text="Orders">
+                <content>
+                    <VBox spacing="10">
+                        <HBox spacing="10">
+                            <ComboBox fx:id="userComboBox" promptText="Select User"/>
+                            <ComboBox fx:id="productComboBox" promptText="Select Product"/>
+                            <TextField fx:id="quantityField" promptText="Quantity"/>
+                            <Button text="Add Order" onAction="#addOrder"/>
+                        </HBox>
+                        <TableView fx:id="orderTable">
+                            <columns>
+                                <TableColumn fx:id="orderUserColumn" text="User"/>
+                                <TableColumn fx:id="orderProductColumn" text="Product"/>
+                                <TableColumn fx:id="orderQuantityColumn" text="Quantity"/>
+                                <TableColumn fx:id="orderStatusColumn" text="Status"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>
